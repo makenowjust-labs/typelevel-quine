@@ -1,6 +1,6 @@
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-ThisBuild / scalaVersion := "0.27.0-RC-1"
+ThisBuild / scalaVersion := "0.27.0-RC1"
 
 lazy val root = project
   .in(file("."))
@@ -9,6 +9,11 @@ lazy val root = project
     name := "typelevel-quine",
     version := "0.1.0-SNAPSHOT",
     console / initialCommands := """
-      |import codes.quine.labo.typelevel.quine._
+      |import scala.compiletime._
+      |
+      |import quine._
       """.stripMargin,
+    // Settings for test:
+    libraryDependencies += "org.scalameta" %% "munit" % "0.7.12",
+    testFrameworks += new TestFramework("munit.Framework")
   )
