@@ -14,6 +14,6 @@ lazy val root = project
       |import quine._
       """.stripMargin,
     // Settings for test:
-    libraryDependencies += "org.scalameta" %% "munit" % "0.7.14",
+    libraryDependencies += "org.scalameta" %% "munit" % "0.7.16",
     testFrameworks += new TestFramework("munit.Framework")
   )
